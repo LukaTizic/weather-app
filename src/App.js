@@ -5,11 +5,16 @@ import axios from "axios";
 // const API_KEY = 895284fb2d2c50a520ea537456963d9c;
 function App() {
   const [data, setData] = useState({});
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("Belgrade");
 
   const handleChange = (e) => {
     setLocation(e.target.value);
   };
+
+  useEffect(() => {
+    getWeather();
+    setLocation("");
+  }, []);
 
   const getWeather = async () => {
     try {
@@ -17,8 +22,6 @@ function App() {
         `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=52027db2366aa0d36c54d31325690e4e`
       );
       setData(response.data);
-      console.log(response.data);
-      setLocation("");
     } catch (error) {
       alert("Please provide value");
     }
