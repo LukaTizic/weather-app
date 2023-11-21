@@ -1,6 +1,8 @@
-# One of my first [project](https://weather-app-react-steel-seven.vercel.app/).
 
-#### Weather app
+
+
+
+ # <h3 align="center">Hero section / Landing page </h3> 
 
 ![Alt text](public/hero.png)
 
